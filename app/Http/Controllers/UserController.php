@@ -1,6 +1,10 @@
 <?
 
 namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 class UserController extends Controller
 {
     public function show($name){
@@ -9,7 +13,6 @@ class UserController extends Controller
     public function all($surname, $name){
         return 'hello world! ' . $surname . ' ' . $name;
     }
-    //task 9
     public function cities($id) {
         $users = [
             'user1' => 'city1',
