@@ -10,9 +10,14 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table){
             $table->id();
-            $table->string('name');
-            $table->text('text');
+            $table->string('title');
+            $table->string('likes');
+            $table->string('category_id');
         });
+        $table->foreign('category_id')
+                  ->references('id')
+                  ->on('categories')
+                  ->onDelete('cascade');
     }
 
     public function down()
